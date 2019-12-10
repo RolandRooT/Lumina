@@ -1,40 +1,51 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LampSpawn : MonoBehaviour
 {
 
     public GameObject lampSpawner;
-    public GameObject lamp;
-    private bool cooldown = false;
+    private GameObject lamp;
+    public GameObject[] colouredLanterns = new GameObject[6];
+    private bool spawning;
+    private float currentTime;
+
     // Start is called before the first frame update
     void Start()
     {
-        cooldown = false;
+        spawning = true;
+        StartCoroutine(SpawnLamp());
     }
 
     // Update is called once per frame
     void Update()
     {
+        currentTime += Time.deltaTime;
+    }
 
-        if (cooldown == false)
+    private IEnumerator SpawnLamp()
+    {
+        while (spawning)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (currentTime < 60)
             {
+                lamp = colouredLanterns[Random.Range(0, colouredLanterns.Length)];
                 Instantiate(lamp, lampSpawner.transform.position, lampSpawner.transform.rotation);
-                Debug.Log("Lantern spawned");
-                cooldown = true;
-                StartCoroutine(CoolTimer());
+                yield return new WaitForSeconds(8);
+            }
+            else if (currentTime > 60 && currentTime < 120)
+            {
+                lamp = colouredLanterns[Random.Range(0, colouredLanterns.Length)];
+                Instantiate(lamp, lampSpawner.transform.position, lampSpawner.transform.rotation);
+                yield return new WaitForSeconds(5);
+            }
+            else
+            {
+                lamp = colouredLanterns[Random.Range(0, colouredLanterns.Length)];
+                Instantiate(lamp, lampSpawner.transform.position, lampSpawner.transform.rotation);
+                yield return new WaitForSeconds(2);
             }
         }
-        else
-            Debug.Log("Fuck you");
     }
 
-    private IEnumerator CoolTimer()
-    {
-        yield return new WaitForSeconds(2);
-        cooldown = false;
-    }
 }
