@@ -53,11 +53,11 @@ public class ShootLantern : MonoBehaviour
     // Checks current time and spawns a firework from a different list depending on how much time has passed
     private void Boom(GameObject lamp)
     {
-        if (currentTime < 60)
+        if (currentTime < 60f)
         {
             Instantiate(fwList[Random.Range(0, 3)], lamp.transform.position, lamp.transform.rotation);
         }
-        else if (currentTime >= 60 && currentTime < 120)
+        else if (currentTime >= 60f && currentTime < 120f)
         {
             Instantiate(fwList[Random.Range(0, 7)], lamp.transform.position, lamp.transform.rotation);
         }

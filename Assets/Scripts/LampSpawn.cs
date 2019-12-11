@@ -19,7 +19,7 @@ public class LampSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTime += Time.deltaTime;
+        currentTime += 1 * Time.deltaTime;
     }
 
     private IEnumerator SpawnLamp()

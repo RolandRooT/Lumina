@@ -5,7 +5,10 @@ using UnityEngine;
 public class Overlord : MonoBehaviour
 {
     private float currentTime;
-    private LampKick lamps;
+    private LampKick lampKick;
+    private ShootLantern ShootLantern;
+
+    public GameObject[] lamps;
 
     // Start is called before the first frame update
     void Start()
@@ -16,11 +19,25 @@ public class Overlord : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTime += Time.deltaTime;
+        currentTime += 1 * Time.deltaTime;
         
-        if (currentTime >= 210)
+        if (currentTime >= 18)
         {
+            TheEnd();
+        }
+    }
 
+    private void TheEnd()
+    {
+        Debug.Log("Reached end");
+        lamps = GameObject.FindGameObjectsWithTag("Lamp");
+        Debug.Log("Finding lamps");
+        foreach (GameObject lamp in lamps)
+        {
+            lampKick = lamp.gameObject.GetComponent<LampKick>();
+            Debug.Log("grabbing scripts in lamps");
+            lampKick.shootable = false;
+            Debug.Log("Lamps invincible");
         }
     }
 }
