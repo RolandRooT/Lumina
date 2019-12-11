@@ -4935,7 +4935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4688990478237344
 Transform:
   m_ObjectHideFlags: 0
@@ -9745,7 +9745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4109731614001366
 Transform:
   m_ObjectHideFlags: 0
@@ -19363,7 +19363,7 @@ GameObject:
   - component: {fileID: 65554080124602052}
   - component: {fileID: 75720717988904632}
   m_Layer: 0
-  m_Name: Lamp_Blue
+  m_Name: Lamp
   m_TagString: Lamp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19434,6 +19434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0bafa1c202bf646a4ae4208f216ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushing: 0
+  shootable: 0
 --- !u!65 &65554080124602052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19476,7 +19478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4200315782747446
 Transform:
   m_ObjectHideFlags: 0
@@ -24228,7 +24230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4596168224737666
 Transform:
   m_ObjectHideFlags: 0
@@ -29116,7 +29118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4695171856905212
 Transform:
   m_ObjectHideFlags: 0
