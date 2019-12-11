@@ -9,6 +9,8 @@ public class ShootLantern : MonoBehaviour
     private float currentTime;
     public List<GameObject> fwList = new List<GameObject>();
     private LampKick lampKick;
+    private LampSpawn lampSpawn;
+    private GameObject[] lamps;
 
     // Update is called once per frame
     void Update()
@@ -31,6 +33,15 @@ public class ShootLantern : MonoBehaviour
         }
 
         currentTime += 1 * Time.deltaTime;
+
+        if (currentTime >= 180f && currentTime <= 182f)
+        {
+            Invincible();
+        }
+        if (currentTime >= 200f && currentTime <= 202f)
+        {
+            TheEnd();
+        }
     }
 
     // Checks if VR controller is pointing at a lantern and calls the Boom 
@@ -66,5 +77,31 @@ public class ShootLantern : MonoBehaviour
             Instantiate(fwList[Random.Range(4, fwList.Count)], lamp.transform.position, lamp.transform.rotation);
         }
         DestroyImmediate(lamp, true);
+    }
+
+    // Makes all active lamps unshootable
+    private void Invincible()
+    {
+        lamps = GameObject.FindGameObjectsWithTag("Lamp");
+        Debug.Log("Finding lamps");
+        foreach (GameObject lamp in lamps)
+        {
+            lampKick = lamp.gameObject.GetComponent<LampKick>();
+            Debug.Log("grabbing scripts in lamps");
+            lampKick.shootable = false;
+            Debug.Log("Lamps invincible");
+        }
+    }
+
+    // Detonates all active lamps and ends the experience
+    private void TheEnd()
+    {
+
+        lamps = GameObject.FindGameObjectsWithTag("Lamp");
+        Debug.Log("Finding lamps");
+        foreach (GameObject lamp in lamps)
+        {
+            Boom(lamp.gameObject);
+        }
     }
 }
