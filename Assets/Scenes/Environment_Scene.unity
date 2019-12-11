@@ -12774,6 +12774,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaccca5e65f90714c960e2019fd174c9, type: 3}
+--- !u!1 &936619482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 936619483}
+  m_Layer: 0
+  m_Name: Overlord
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &936619483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936619482}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.042883, y: -2.0997906, z: -4.9793763}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &949204385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14794,13 +14824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lampSpawner: {fileID: 1487735696}
-  colouredLanterns:
-  - {fileID: 1708864875986798, guid: 8f40bf91271ab2a47941d56cf0611269, type: 3}
-  - {fileID: 1708864875986798, guid: e0b56bdd6feabd24296c5847a0e6a4f4, type: 3}
-  - {fileID: 1708864875986798, guid: 6c67ab64bd6ce6e459bc00d39db3fcc8, type: 3}
-  - {fileID: 1708864875986798, guid: 6f23486b27abd7245a3fc35a2f7c23ef, type: 3}
-  - {fileID: 1708864875986798, guid: 05832f86ce29d4d47ac8d243c36248bb, type: 3}
-  - {fileID: 1708864875986798, guid: b62d25876d24c8e4eb3e55f5f3784033, type: 3}
+  lamp: {fileID: 1708864875986798, guid: b62d25876d24c8e4eb3e55f5f3784033, type: 3}
 --- !u!4 &1487735698
 Transform:
   m_ObjectHideFlags: 0
@@ -14809,7 +14833,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487735696}
   m_LocalRotation: {x: -0, y: -0.982172, z: -0, w: 0.1879846}
-  m_LocalPosition: {x: -0.79, y: 1.971, z: -2.13}
+  m_LocalPosition: {x: 0.462, y: 2.229, z: 1.019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

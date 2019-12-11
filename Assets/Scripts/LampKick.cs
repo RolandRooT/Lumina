@@ -19,7 +19,6 @@ public class LampKick : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.AddRelativeForce(UnityEngine.Random.Range(-50f, 50f), UnityEngine.Random.Range(0f, 50f), kickForce);
-        // Debug.Log("Kick the fucker");
         shootable = false;
         pushing = true;
         StartCoroutine(PushTimer());
@@ -31,7 +30,6 @@ public class LampKick : MonoBehaviour
     {
         while (pushing)
         {
-            // Debug.Log(pushing);
             rb.AddForce(pushForce);
             yield return new WaitForEndOfFrame();
         }

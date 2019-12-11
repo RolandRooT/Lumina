@@ -51,8 +51,6 @@ public class ShootLantern : MonoBehaviour
 
     private void Boom(GameObject lamp)
     {
-        // Debug.Log("Hit lantern");
-
         if (currentTime < 60)
         {
             Instantiate(fwList[Random.Range(0, 3)], lamp.transform.position, lamp.transform.rotation);
