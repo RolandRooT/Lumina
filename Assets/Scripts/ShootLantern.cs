@@ -33,6 +33,7 @@ public class ShootLantern : MonoBehaviour
         currentTime += 1 * Time.deltaTime;
     }
 
+    // Checks if VR controller is pointing at a lantern and calls the Boom 
     private void Shoot()
     {
         var hitResult = VRDevice.Device.PrimaryInputDevice.Pointer.CurrentRaycastResult;
@@ -49,6 +50,7 @@ public class ShootLantern : MonoBehaviour
         }
     }
 
+    // Checks current time and spawns a firework from a different list depending on how much time has passed
     private void Boom(GameObject lamp)
     {
         if (currentTime < 60)

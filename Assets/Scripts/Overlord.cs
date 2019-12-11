@@ -5,6 +5,7 @@ using UnityEngine;
 public class Overlord : MonoBehaviour
 {
     private float currentTime;
+    private LampKick lamps;
 
     // Start is called before the first frame update
     void Start()
@@ -16,5 +17,10 @@ public class Overlord : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
+        
+        if (currentTime >= 210)
+        {
+
+        }
     }
 }
