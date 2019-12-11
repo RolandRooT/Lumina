@@ -14,6 +14,7 @@ public class LampSpawn : MonoBehaviour
     {
         spawning = true;
         StartCoroutine(SpawnLamp());
+        Invoke("Stop", 200);
     }
 
     // Update is called once per frame
@@ -26,22 +27,24 @@ public class LampSpawn : MonoBehaviour
     {
         while (spawning)
         {
+            Instantiate(lamp, lampSpawner.transform.position, lampSpawner.transform.rotation);
             if (currentTime < 60)
             {
-                Instantiate(lamp, lampSpawner.transform.position, lampSpawner.transform.rotation);
                 yield return new WaitForSeconds(8);
             }
             else if (currentTime > 60 && currentTime < 120)
             {
-                Instantiate(lamp, lampSpawner.transform.position, lampSpawner.transform.rotation);
                 yield return new WaitForSeconds(5);
             }
             else
             {
-                Instantiate(lamp, lampSpawner.transform.position, lampSpawner.transform.rotation);
                 yield return new WaitForSeconds(2);
             }
         }
+    }
+    private void Stop()
+    {
+        spawning = false;
     }
 
 }

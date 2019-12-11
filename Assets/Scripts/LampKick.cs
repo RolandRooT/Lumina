@@ -5,7 +5,7 @@ public class LampKick : MonoBehaviour
 {
     private Rigidbody rb;
 
-    private float kickForce = 250f;
+    private float kickForce = 300f;
     public bool pushing = false;
     public bool shootable = false;
     Vector3 pushForce;
