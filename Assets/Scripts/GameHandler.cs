@@ -3,7 +3,7 @@ using UnityEngine;
 using Liminal.SDK.VR;
 using Liminal.SDK.VR.Input;
 
-public class ShootLantern : MonoBehaviour
+public class GameHandler : MonoBehaviour
 {
     private bool playing;
     private float currentTime;
@@ -27,13 +27,16 @@ public class ShootLantern : MonoBehaviour
             return;
         #endregion
 
+        // calls the Shoot function when player presses the VR trigger
         if (inputDevice.GetButtonDown(VRButton.One))
         {
             Shoot();
         }
 
+        // Increments the timer every frame
         currentTime += 1 * Time.deltaTime;
 
+        // Starts ending sequence when timer reaches a certain amount
         if (currentTime >= 180f && currentTime <= 182f)
         {
             Invincible();
