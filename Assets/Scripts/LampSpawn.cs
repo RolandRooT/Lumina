@@ -20,11 +20,13 @@ public class LampSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Increments the timer every frame
         currentTime += 1 * Time.deltaTime;
     }
 
     private IEnumerator SpawnLamp()
     {
+        // While true, spawns a lantern at varying intervals depending on how much time has passed
         while (spawning)
         {
             Instantiate(lamp, lampSpawner.transform.position, lampSpawner.transform.rotation);
@@ -42,6 +44,7 @@ public class LampSpawn : MonoBehaviour
             }
         }
     }
+    // Stops spawning
     private void Stop()
     {
         spawning = false;

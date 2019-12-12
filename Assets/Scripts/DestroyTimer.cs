@@ -2,7 +2,7 @@
 
 public class DestroyTimer : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Destroys a firework effect once it has run its course.
     void Start()
     {
         Invoke("Timer", 9);
