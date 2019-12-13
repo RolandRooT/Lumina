@@ -14,7 +14,7 @@ public class LampSpawn : MonoBehaviour
     {
         spawning = true;
         StartCoroutine(SpawnLamp());
-        Invoke("Stop", 200);
+        Invoke("Stop", 180);
     }
 
     // Update is called once per frame
