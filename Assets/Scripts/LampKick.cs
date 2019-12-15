@@ -13,7 +13,7 @@ public class LampKick : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        pushForce = new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f), UnityEngine.Random.Range(0f, 0.5f), UnityEngine.Random.Range(0f, 0.5f));
+        pushForce = new Vector3(UnityEngine.Random.Range(-0.7f, 0.7f), UnityEngine.Random.Range(0f, 0.4f), UnityEngine.Random.Range(0f, 0.7f));
     }
 
     // Kicks the lantern and starts pushing it slowly over time

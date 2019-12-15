@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Liminal.SDK.Core;
 using Liminal.SDK.VR;
 using Liminal.SDK.VR.Input;
 
@@ -12,7 +13,13 @@ public class GameHandler : MonoBehaviour
     private LampSpawn lampSpawn;
     private GameObject[] lamps;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        // Starts ending sequence when timer reaches a certain amount
+        Invoke("Invincible", 180);
+        Invoke("TheEnd", 200);
+    }
+
     void Update()
     {
         #region VRController
@@ -36,15 +43,7 @@ public class GameHandler : MonoBehaviour
         // Increments the timer every frame
         currentTime += 1 * Time.deltaTime;
 
-        // Starts ending sequence when timer reaches a certain amount
-        if (currentTime >= 180f && currentTime <= 182f)
-        {
-            Invincible();
-        }
-        if (currentTime >= 200f && currentTime <= 202f)
-        {
-            TheEnd();
-        }
+        
     }
 
     // Checks if VR controller is pointing at a lantern and calls the Boom 
@@ -106,5 +105,11 @@ public class GameHandler : MonoBehaviour
         {
             Boom(lamp.gameObject);
         }
+        Invoke("Stop", 8);
+    }
+
+    private void Stop()
+    {
+        ExperienceApp.End();
     }
 }
