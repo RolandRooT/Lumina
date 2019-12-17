@@ -34,14 +34,14 @@ public class LampSpawn : MonoBehaviour
             {
                 yield return new WaitForSeconds(8);
             }
-            else if (currentTime > 60 && currentTime < 120)
+            else /* if (currentTime > 60 && currentTime < 120) */
             {
                 yield return new WaitForSeconds(5);
             }
-            else
-            {
-                yield return new WaitForSeconds(2);
-            }
+            // else
+            // {
+            //     yield return new WaitForSeconds(2);
+            // }
         }
     }
     // Stops spawning

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Liminal.SDK.Core;
 using Liminal.SDK.VR;
@@ -12,6 +13,8 @@ public class GameHandler : MonoBehaviour
     private LampKick lampKick;
     private LampSpawn lampSpawn;
     private GameObject[] lamps;
+    private bool exploding = false;
+    int i = 0;
 
     private void Start()
     {
@@ -98,16 +101,21 @@ public class GameHandler : MonoBehaviour
     // Detonates all active lamps and ends the experience
     private void TheEnd()
     {
-
-        lamps = GameObject.FindGameObjectsWithTag("Lamp");
-        Debug.Log("Finding lamps");
-        foreach (GameObject lamp in lamps)
-        {
-            Boom(lamp.gameObject);
-        }
-        Invoke("Stop", 8);
+        exploding = true;
+        StartCoroutine(BoomSequence());
+        Invoke("Stop", 20);
     }
 
+    private IEnumerator BoomSequence()
+    {
+        lamps = GameObject.FindGameObjectsWithTag("Lamp");
+        while (exploding)
+        {
+            Boom(lamps[i].gameObject);
+            i++;
+            yield return new WaitForSeconds(1);
+        }
+    }
     private void Stop()
     {
         ExperienceApp.End();
